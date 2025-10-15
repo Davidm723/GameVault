@@ -10,6 +10,8 @@ const MongoStore = require('connect-mongo');
 const isSignedIn = require('./middleware/is-signed-in');
 const passUserToView = require('./middleware/pass-user-to-view');
 
+const gamesController = require('./controllers/games');
+
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 const authController = require('./controllers/auth');
@@ -36,10 +38,16 @@ app.use(
 app.use(passUserToView);
 
 app.get('/', (req, res) => {
-    res.render('index.ejs');
+    if (req.session.user) {
+        res.redirect(`/users/${req.session.user._id}/games`);
+    } else {
+        res.render('index.ejs');
+    }
 });
 
 app.use('/auth', authController);
+app.use(isSignedIn);
+app.use('/users/:userId/games', gamesController);
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}!`);

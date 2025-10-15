@@ -8,18 +8,11 @@
 </head>
 
 <body>
-    <% if (user) { %>
-        <h1>Welcome to GameVault, <%= user.username %>
-        </h1>
-        <h2>All Your Games in One Vault</h2>
-        <p><a href="/auth/sign-out">Sign Out</a></p>
-        <% } else { %>
-            <h1>Welcome to GameVault</h1>
-            <h2>All Your Games in One Vault</h2>
-            
-            <a href="/auth/sign-up">Sign Up</a>
-            <a href="/auth/sign-in">Sign In</a>
-            <% } %>
+    <%- include('./partials/_navbar.ejs') %>
+    <h1>Welcome to GameVault</h1>
+    <h2>All Your Games in One Vault</h2>
+    <a href="/auth/sign-up">Sign Up</a>
+    <a href="/auth/sign-in">Sign In</a>
 </body>
 
 </html>
