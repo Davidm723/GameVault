@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= game.title %>
+    </title>
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+        <h1>
+            <%= game.title %>
+        </h1>
+        <img src="<%= game.imageUrl %>" alt="<%= game.name %>" width="100px" height="100px" />
+        <h3>
+            <%= game.system %>
+        </h3>
+        <% if (game.completeInBox===true) { %>
+            <p>Complete in Box</p>
+            <% } else { %>
+                <p>Not Complete in Box</p>
+                <% } %>
+                    <% if (game.notes) { %>
+                        <p>Notes: <%= game.notes %>
+                        </p>
+                        <% } %>
+                            <form action="/users/<%= user._id %>/games/<%= game._id %>?_method=DELETE" method="post">
+                                <button type="submit">Delete Game</button>
+                            </form>
+</body>
+
+</html>

@@ -7,7 +7,7 @@ const gameSchema = new mongoose.Schema({
     },
     system: {
         type: String,
-        enum: ['3ds', 'atari 2600', 'dreamcast', 'ds', 'game boy', 'game boy advance', 'game boy color', 'gamecube', 'gamegear', 'genesis', 'neo geo', 'nes', 'nintendo 64', 'nintendo switch', 'nintendo switch 2', 'pc', 'playstation', 'playstation 2', 'playstation 3', 'playstation 4', 'playstation 5', 'playstation vita', 'psp', 'saturn', 'sega 32x', 'sega cd', 'sega master system', 'super nintendo', 'virtual boy', 'wii', 'wii u', 'xbox', 'xbox 360', 'xbox one', 'xbox series x'],
+        enum: ['3DS', 'Atari 2600', 'Dreamcast', 'DS', 'Game Boy', 'Game Boy Advance', 'Game Boy Color', 'GameCube', 'GameGear', 'Genesis', 'Neo Geo', 'NES', 'Nintendo 64', 'Nintendo Switch', 'Nintendo Switch 2', 'PC', 'PlayStation', 'PlayStation 2', 'PlayStation 3', 'PlayStation 4', 'PlayStation 5', 'PlayStation Vita', 'PSP', 'Saturn', 'Sega 32X', 'Sega CD', 'Sega Master System', 'Super Nintendo', 'Virtual Boy', 'Wii', 'Wii U', 'Xbox', 'Xbox 360', 'Xbox One', 'Xbox Series X'],
         required: true,
     },
     completeInBox: {
