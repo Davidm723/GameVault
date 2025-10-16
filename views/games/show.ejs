@@ -27,6 +27,7 @@
                         <p>Notes: <%= game.notes %>
                         </p>
                         <% } %>
+                            <a href="/users/<%= user._id %>/games/<%= game._id %>/edit">Edit Game</a>
                             <form action="/users/<%= user._id %>/games/<%= game._id %>?_method=DELETE" method="post">
                                 <button type="submit">Delete Game</button>
                             </form>
