@@ -1,10 +1,20 @@
 <nav>
     <% if(user) { %>
-        <a href="/users/<%= user._id %>/games">My Games</a>
-        <a href="/users">Explore our Community</a>
-        <a href="/auth/sign-out">Sign Out</a>
-    <% } else { %>
-        <a href="/auth/sign-in">Sign In</a>
-        <a href="/auth/sign-up">Sign Up</a>
-    <% } %>
+        <div class="navbar">
+            <h1 id="nav-header">GameVault</h1>
+            <div class="nav-links">
+                <a class="authlink" href="/users/<%= user._id %>/games">My Games</a>
+                <a class="authlink" href="/users">Explore our Community</a>
+                <a class="authlink" href="/auth/sign-out">Sign Out</a>
+            </div>
+        </div>
+        <% } else { %>
+            <div class="navbar">
+                <h1 id="nav-header">GameVault</h1>
+                <div class="nav-links">
+                    <a class="authlink" href="/auth/sign-in">Sign In</a>
+                    <a class="authlink" href="/auth/sign-up">Sign Up</a>
+                </div>
+            </div>
+            <% } %>
 </nav>
