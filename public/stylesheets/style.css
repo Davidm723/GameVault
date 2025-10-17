@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #5c94fc;
+  color: #fcfcfc;
+}
+
+.index-body {
+  background-image: url("../imgs/NES\ -\ Super\ Mario\ Bros.\ -\ Stages\ -\ World\ 1-1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100vh;
+  color: #fcfcfc;
+}
+
+.main-header {
+  font-weight: bold;
+  color: #fcfcfc;
+  font-size: 3.5em;
+  margin-left: 25%;
+}
+
+.subheader {
+  margin-left: 27%;
+  font-size: 1.4em;
+}
+
+.index-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.auth-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  height: 100%;
+}
+
+.signup-link,
+.signin-link {
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 8px 0;
+  border-radius: 25px;
+  width: 5em;
+  text-align: center;
+}
+
+.signup-link {
+  background-color: #c84c0c;
+  color: #190901;
+  margin: 10px;
+}
+
+.signup-link:hover {
+  background-color: #fc9838;
+}
+
+.signin-link {
+  background-color: #00a800;
+  color: #04070c;
+}
+
+.signin-link:hover {
+  background-color: #80d010;
+}

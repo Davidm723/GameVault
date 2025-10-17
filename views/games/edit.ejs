@@ -1,66 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit <%= game.title %></title>
+    <title>Edit <%= game.title %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Edit <%= game.title %></h1>
-    <form action="/users/<%= user._id %>/games/<%= game._id %>?_method=PUT" method="POST">
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" value="<%= game.title %>" />
+        <h1>Edit <%= game.title %>
+        </h1>
+        <form action="/users/<%= user._id %>/games/<%= game._id %>?_method=PUT" method="POST">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" value="<%= game.title %>" />
 
-        <label for="system">System:</label>
-        <select name="system" id="system">
-            <option value="">--Select a System--</option>
-            <option value="3DS" <%= game.system === '3DS' ? 'selected' : '' %>>3DS</option>
-            <option value="Atari 2600" <%= game.system === 'Atari 2600' ? 'selected' : '' %>>Atari 2600</option>
-            <option value="Dreamcast" <%= game.system === 'Dreamcast' ? 'selected' : '' %>>Dreamcast</option>
-            <option value="DS" <%= game.system === 'DS' ? 'selected' : '' %>>DS</option>
-            <option value="Game Boy" <%= game.system === 'Game Boy' ? 'selected' : '' %>>Game Boy</option>
-            <option value="Game Boy Advance" <%= game.system === 'Game Boy Advance' ? 'selected' : '' %>>Game Boy Advance</option>
-            <option value="Game Boy Color" <%= game.system === 'Game Boy Color' ? 'selected' : '' %>>Game Boy Color</option>
-            <option value="GameCube" <%= game.system === 'GameCube' ? 'selected' : '' %>>GameCube</option>
-            <option value="GameGear" <%= game.system === 'GameGear' ? 'selected' : '' %>>GameGear</option>
-            <option value="Genesis" <%= game.system === 'Genesis' ? 'selected' : '' %>>Genesis</option>
-            <option value="Neo Geo" <%= game.system === 'Neo Geo' ? 'selected' : '' %>>Neo Geo</option>
-            <option value="NES" <%= game.system === 'NES' ? 'selected' : '' %>>NES</option>
-            <option value="Nintendo 64" <%= game.system === 'Nintendo 64' ? 'selected' : '' %>>Nintendo 64</option>
-            <option value="Nintendo Switch" <%= game.system === 'Nintendo Switch' ? 'selected' : '' %>>Nintendo Switch</option>
-            <option value="Nintendo Switch 2" <%= game.system === 'Nintendo Switch 2' ? 'selected' : '' %>>Nintendo Switch 2</option>
-            <option value="PC" <%= game.system === 'PC' ? 'selected' : '' %>>PC</option>
-            <option value="PlayStation" <%= game.system === 'PlayStation' ? 'selected' : '' %>>PlayStation</option>
-            <option value="PlayStation 2" <%= game.system === 'PlayStation 2' ? 'selected' : '' %>>PlayStation 2</option>
-            <option value="PlayStation 3" <%= game.system === 'PlayStation 3' ? 'selected' : '' %>>PlayStation 3</option>
-            <option value="PlayStation 4" <%= game.system === 'PlayStation 4' ? 'selected' : '' %>>PlayStation 4</option>
-            <option value="PlayStation 5" <%= game.system === 'PlayStation 5' ? 'selected' : '' %>>PlayStation 5</option>
-            <option value="PlayStation Vita" <%= game.system === 'PlayStation Vita' ? 'selected' : '' %>>PlayStation Vita</option>
-            <option value="PSP" <%= game.system === 'PSP' ? 'selected' : '' %>>PSP</option>
-            <option value="Saturn" <%= game.system === 'Saturn' ? 'selected' : '' %>>Saturn</option>
-            <option value="Sega 32X" <%= game.system === 'Sega 32X' ? 'selected' : '' %>>Sega 32X</option>
-            <option value="Sega CD" <%= game.system === 'Sega CD' ? 'selected' : '' %>>Sega CD</option>
-            <option value="Sega Master System" <%= game.system === 'Sega Master System' ? 'selected' : '' %>>Sega Master System</option>
-            <option value="Super Nintendo" <%= game.system === 'Super Nintendo' ? 'selected' : '' %>>Super Nintendo</option>
-            <option value="Virtual Boy" <%= game.system === 'Virtual Boy' ? 'selected' : '' %>>Virtual Boy</option>
-            <option value="Wii" <%= game.system === 'Wii' ? 'selected' : '' %>>Wii</option>
-            <option value="Wii U" <%= game.system === 'Wii U' ? 'selected' : '' %>>Wii U</option>
-            <option value="Xbox" <%= game.system === 'Xbox' ? 'selected' : '' %>>Xbox</option>
-            <option value="Xbox 360" <%= game.system === 'Xbox 360' ? 'selected' : '' %>>Xbox 360</option>
-            <option value="Xbox One" <%= game.system === 'Xbox One' ? 'selected' : '' %>>Xbox One</option>
-            <option value="Xbox Series X" <%= game.system === 'Xbox Series X' ? 'selected' : '' %>>Xbox Series X</option>
-        </select>
+            <label for="system">System:</label>
+            <select name="system" id="system">
+                <option value="">--Select a System--</option>
+                <option value="3DS" <%=game.system==='3DS' ? 'selected' : '' %>>3DS</option>
+                <option value="Atari 2600" <%=game.system==='Atari 2600' ? 'selected' : '' %>>Atari 2600</option>
+                <option value="Dreamcast" <%=game.system==='Dreamcast' ? 'selected' : '' %>>Dreamcast</option>
+                <option value="DS" <%=game.system==='DS' ? 'selected' : '' %>>DS</option>
+                <option value="Game Boy" <%=game.system==='Game Boy' ? 'selected' : '' %>>Game Boy</option>
+                <option value="Game Boy Advance" <%=game.system==='Game Boy Advance' ? 'selected' : '' %>>Game Boy
+                    Advance</option>
+                <option value="Game Boy Color" <%=game.system==='Game Boy Color' ? 'selected' : '' %>>Game Boy Color
+                </option>
+                <option value="GameCube" <%=game.system==='GameCube' ? 'selected' : '' %>>GameCube</option>
+                <option value="GameGear" <%=game.system==='GameGear' ? 'selected' : '' %>>GameGear</option>
+                <option value="Genesis" <%=game.system==='Genesis' ? 'selected' : '' %>>Genesis</option>
+                <option value="Neo Geo" <%=game.system==='Neo Geo' ? 'selected' : '' %>>Neo Geo</option>
+                <option value="NES" <%=game.system==='NES' ? 'selected' : '' %>>NES</option>
+                <option value="Nintendo 64" <%=game.system==='Nintendo 64' ? 'selected' : '' %>>Nintendo 64</option>
+                <option value="Nintendo Switch" <%=game.system==='Nintendo Switch' ? 'selected' : '' %>>Nintendo Switch
+                </option>
+                <option value="Nintendo Switch 2" <%=game.system==='Nintendo Switch 2' ? 'selected' : '' %>>Nintendo
+                    Switch 2</option>
+                <option value="PC" <%=game.system==='PC' ? 'selected' : '' %>>PC</option>
+                <option value="PlayStation" <%=game.system==='PlayStation' ? 'selected' : '' %>>PlayStation</option>
+                <option value="PlayStation 2" <%=game.system==='PlayStation 2' ? 'selected' : '' %>>PlayStation 2
+                </option>
+                <option value="PlayStation 3" <%=game.system==='PlayStation 3' ? 'selected' : '' %>>PlayStation 3
+                </option>
+                <option value="PlayStation 4" <%=game.system==='PlayStation 4' ? 'selected' : '' %>>PlayStation 4
+                </option>
+                <option value="PlayStation 5" <%=game.system==='PlayStation 5' ? 'selected' : '' %>>PlayStation 5
+                </option>
+                <option value="PlayStation Vita" <%=game.system==='PlayStation Vita' ? 'selected' : '' %>>PlayStation
+                    Vita</option>
+                <option value="PSP" <%=game.system==='PSP' ? 'selected' : '' %>>PSP</option>
+                <option value="Saturn" <%=game.system==='Saturn' ? 'selected' : '' %>>Saturn</option>
+                <option value="Sega 32X" <%=game.system==='Sega 32X' ? 'selected' : '' %>>Sega 32X</option>
+                <option value="Sega CD" <%=game.system==='Sega CD' ? 'selected' : '' %>>Sega CD</option>
+                <option value="Sega Master System" <%=game.system==='Sega Master System' ? 'selected' : '' %>>Sega
+                    Master System</option>
+                <option value="Super Nintendo" <%=game.system==='Super Nintendo' ? 'selected' : '' %>>Super Nintendo
+                </option>
+                <option value="Virtual Boy" <%=game.system==='Virtual Boy' ? 'selected' : '' %>>Virtual Boy</option>
+                <option value="Wii" <%=game.system==='Wii' ? 'selected' : '' %>>Wii</option>
+                <option value="Wii U" <%=game.system==='Wii U' ? 'selected' : '' %>>Wii U</option>
+                <option value="Xbox" <%=game.system==='Xbox' ? 'selected' : '' %>>Xbox</option>
+                <option value="Xbox 360" <%=game.system==='Xbox 360' ? 'selected' : '' %>>Xbox 360</option>
+                <option value="Xbox One" <%=game.system==='Xbox One' ? 'selected' : '' %>>Xbox One</option>
+                <option value="Xbox Series X" <%=game.system==='Xbox Series X' ? 'selected' : '' %>>Xbox Series X
+                </option>
+            </select>
 
-        <label for="completeInBox">Complete in Box?</label>
-        <input type="checkbox" name="completeInBox" id="completeInBox" <%= game.completeInBox === true ? 'checked' : '' %> />
+            <label for="completeInBox">Complete in Box?</label>
+            <input type="checkbox" name="completeInBox" id="completeInBox" <%=game.completeInBox===true ? 'checked' : ''
+                %> />
 
-        <label for="imageUrl">Box Art URL:</label>
-        <input type="text" name="imageUrl" id="imageUrl" value="<%= game.imageUrl %>" />
+            <label for="imageUrl">Box Art URL:</label>
+            <input type="text" name="imageUrl" id="imageUrl" value="<%= game.imageUrl %>" />
 
-        <label for="notes">Notes</label>
-        <textarea name="notes" id="notes"><%= game.notes %></textarea>
-        <button type="submit">Update Game</button>
-    </form>
+            <label for="notes">Notes</label>
+            <textarea name="notes" id="notes"><%= game.notes %></textarea>
+            <button type="submit">Update Game</button>
+        </form>
 </body>
+
 </html>

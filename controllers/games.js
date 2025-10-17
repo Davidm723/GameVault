@@ -6,6 +6,10 @@ const User = require("../models/user");
 router.get("/", async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
+    if(!currentUser) {
+      req.session.destroy();
+      res.redirect('/auth/sign-in')
+    }
     res.render("games/index.ejs", {
       games: currentUser.games,
     });
