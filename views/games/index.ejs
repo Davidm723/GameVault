@@ -11,20 +11,26 @@
 </head>
 
 <body>
-    <%- include('../partials/_navbar.ejs') %>
-        <h1>
-            <%= user.username %>'s Games
-        </h1>
-        <a href="/users/<%= user._id %>/games/new">Add New Game</a>
-        <ul>
-            <% games.forEach((game)=> { %>
-                <li>
-                    <a href="/users/<%= user._id %>/games/<%= game._id %>">
-                        (<%= game.system %>) <%= game.title %>
-                    </a>
-                </li>
-                <% }) %>
-        </ul>
+    <div class="all-games-body">
+        <%- include('../partials/_navbar.ejs') %>
+            <div class="all-games-header">
+                <h1>
+                    <%= user.username %>'s Games
+                </h1>
+            </div>
+            <a class="add-game-link" href="/users/<%= user._id %>/games/new">Add New Game</a>
+            <ul class="games-ul">
+                <% games.forEach((game)=> { %>
+                    <li class="games-li">
+                        <a href="/users/<%= user._id %>/games/<%= game._id %>"><img src="<%= game.imageUrl %>"
+                                alt="<%= game.title %>" height="150px" width="auto"></a>
+                        <a href="/users/<%= user._id %>/games/<%= game._id %>">
+                            (<%= game.system %>) <%= game.title %>
+                        </a>
+                    </li>
+                    <% }) %>
+            </ul>
+    </div>
 </body>
 
 </html>
