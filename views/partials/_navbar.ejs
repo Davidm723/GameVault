@@ -1,7 +1,7 @@
 <nav>
     <% if(user) { %>
         <div class="navbar">
-            <h1 id="nav-header">GameVault</h1>
+            <a href="/users/<%= user._id %>/games"><h1 id="nav-header">GameVault</h1></a>
             <div class="nav-links">
                 <a class="authlink" href="/users/<%= user._id %>/games">My Games</a>
                 <a class="authlink" href="/users">Explore our Community</a>
@@ -10,7 +10,7 @@
         </div>
         <% } else { %>
             <div class="navbar">
-                <h1 id="nav-header">GameVault</h1>
+                <a href="/"><h1 id="nav-header">GameVault</h1></a>
                 <div class="nav-links">
                     <a class="authlink" href="/auth/sign-in">Sign In</a>
                     <a class="authlink" href="/auth/sign-up">Sign Up</a>

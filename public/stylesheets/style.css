@@ -87,6 +87,10 @@ body {
   padding: 10px;
 }
 
+a{
+  text-decoration: none;
+}
+
 #nav-header {
   color: #fcfcfc;
   size: 1em !important;
@@ -114,7 +118,8 @@ body {
   height: 100%;
 }
 
-form {
+.signin-form,
+.signup-form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
