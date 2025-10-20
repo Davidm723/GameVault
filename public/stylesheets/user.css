@@ -1,0 +1,38 @@
+.user-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 90%;
+}
+
+ul {
+  list-style: none;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(252, 252, 252, 0.3);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 10px;
+}
+
+.games-li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 220px;
+  text-align: center;
+  margin: 15px;
+}

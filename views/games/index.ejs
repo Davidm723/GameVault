@@ -22,10 +22,13 @@
             <ul class="games-ul">
                 <% games.forEach((game)=> { %>
                     <li class="games-li">
-                        <a href="/users/<%= user._id %>/games/<%= game._id %>"><img src="<%= game.imageUrl %>"
-                                alt="<%= game.title %>" height="150px" width="auto"></a>
                         <a href="/users/<%= user._id %>/games/<%= game._id %>">
-                            (<%= game.system %>) <%= game.title %>
+                            <div class="games-img">
+                                <img src="<%= game.imageUrl %>" alt="<%= game.title %>" height="150px" width="auto">
+                            </div>
+                            <div class="game-name">
+                                (<%= game.system %>) <%= game.title %>
+                            </div>
                         </a>
                     </li>
                     <% }) %>

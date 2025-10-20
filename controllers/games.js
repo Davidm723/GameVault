@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
     }
     if (!req.body.imageUrl) {
       req.body.imageUrl =
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Box_Art_Not_Available.xcf/250px-Box_Art_Not_Available.xcf.png?20120805133938";
+        "https://gamefaqs.gamespot.com/a/platform/thumb/arcade.jpg";
     }
     currentUser.games.push(req.body);
     await currentUser.save();

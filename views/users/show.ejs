@@ -8,24 +8,34 @@
         <%= user.username %>'s Collection
     </title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/user.css" />
 </head>
 
 <body>
-    <%- include('../partials/_navbar.ejs') %>
-        <h1>
-            <%= user.username %>'s Collection
-        </h1>
-        <ul>
-            <% if (user.games.length===0) { %>
-                <li>This user has no games in their collection yet.</li>
-                <% } else { %>
-                    <% user.games.forEach(game=> { %>
-                        <li>
-                            <%= game.title %>
-                        </li>
-                        <% }) %>
-                            <% } %>
-        </ul>
+    <div class="all-games-body">
+        <%- include('../partials/_navbar.ejs') %>
+            <div class="all-games-header">
+                <h1>
+                    <%= user.username %>'s Collection
+                </h1>
+            </div>
+            <ul class="games-ul">
+                <% if (user.games.length===0) { %>
+                    <li>This user has no games in their collection yet.</li>
+                    <% } else { %>
+                        <% user.games.forEach(game=> { %>
+                            <li class="games-li">
+                                <div class="games-img">
+                                    <img src="<%= game.imageUrl %>" alt="game.title" height="150px" width="auto" />
+                                </div>
+                                <div class="games-name">
+                                    (<%= game.system %>) <%= game.title %>
+                                </div>
+                            </li>
+                            <% }) %>
+                                <% } %>
+            </ul>
+    </div>
 </body>
 
 </html>
