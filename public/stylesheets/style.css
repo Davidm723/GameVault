@@ -78,7 +78,7 @@ body {
   background-color: #80d010;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -159,7 +159,7 @@ button:hover {
   text-decoration: none;
 }
 
-.add-game-link:hover{
+.add-game-link:hover {
   background-color: gold;
 }
 
@@ -188,10 +188,47 @@ li > a {
   margin: 15px;
 }
 
-li > a:hover{
+li > a:hover {
   color: gold;
 }
 
 img {
   object-fit: contain;
+}
+
+.new-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.new-body > form,
+.edit-body > form {
+  height: 70%;
+}
+
+textarea,
+select {
+  border: 1px solid rgb(182, 182, 182);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+select {
+  margin-bottom: 10px;
+}
+
+.edit-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.form-button {
+  background-color: #00a800;
+  color: #fcfcfc;
+}
+
+.form-button:hover {
+  background-color: #80d010;
 }

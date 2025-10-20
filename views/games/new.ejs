@@ -11,60 +11,66 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
         <h1>Add a New Game</h1>
-        <form action="/users/<%= user._id %>/games" method="POST">
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title" />
+        <div class="new-body">
+            <div class="form-div">
+                <form action="/users/<%= user._id %>/games" method="POST">
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title" />
 
-            <label for="system">System:</label>
-            <select name="system" id="system">
-                <option value="">--Select a System--</option>
-                <option value="3DS">3DS</option>
-                <option value="Atari 2600">Atari 2600</option>
-                <option value="Dreamcast">Dreamcast</option>
-                <option value="DS">DS</option>
-                <option value="Game Boy">Game Boy</option>
-                <option value="Game Boy Advance">Game Boy Advance</option>
-                <option value="Game Boy Color">Game Boy Color</option>
-                <option value="GameCube">GameCube</option>
-                <option value="GameGear">GameGear</option>
-                <option value="Genesis">Genesis</option>
-                <option value="Neo Geo">Neo Geo</option>
-                <option value="NES">NES</option>
-                <option value="Nintendo 64">Nintendo 64</option>
-                <option value="Nintendo Switch">Nintendo Switch</option>
-                <option value="Nintendo Switch 2">Nintendo Switch 2</option>
-                <option value="PC">PC</option>
-                <option value="PlayStation">PlayStation</option>
-                <option value="PlayStation 2">PlayStation 2</option>
-                <option value="PlayStation 3">PlayStation 3</option>
-                <option value="PlayStation 4">PlayStation 4</option>
-                <option value="PlayStation 5">PlayStation 5</option>
-                <option value="PlayStation Vita">PlayStation Vita</option>
-                <option value="PSP">PSP</option>
-                <option value="Saturn">Saturn</option>
-                <option value="Sega 32X">Sega 32X</option>
-                <option value="Sega CD">Sega CD</option>
-                <option value="Sega Master System">Sega Master System</option>
-                <option value="Super Nintendo">Super Nintendo</option>
-                <option value="Virtual Boy">Virtual Boy</option>
-                <option value="Wii">Wii</option>
-                <option value="Wii U">Wii U</option>
-                <option value="Xbox">Xbox</option>
-                <option value="Xbox 360">Xbox 360</option>
-                <option value="Xbox One">Xbox One</option>
-                <option value="Xbox Series X">Xbox Series X</option>
-            </select>
+                    <label for="system">System:</label>
+                    <select name="system" id="system">
+                        <option value="">--Select a System--</option>
+                        <option value="3DS">3DS</option>
+                        <option value="Atari 2600">Atari 2600</option>
+                        <option value="Dreamcast">Dreamcast</option>
+                        <option value="DS">DS</option>
+                        <option value="Game Boy">Game Boy</option>
+                        <option value="Game Boy Advance">Game Boy Advance</option>
+                        <option value="Game Boy Color">Game Boy Color</option>
+                        <option value="GameCube">GameCube</option>
+                        <option value="GameGear">GameGear</option>
+                        <option value="Genesis">Genesis</option>
+                        <option value="Neo Geo">Neo Geo</option>
+                        <option value="NES">NES</option>
+                        <option value="Nintendo 64">Nintendo 64</option>
+                        <option value="Nintendo Switch">Nintendo Switch</option>
+                        <option value="Nintendo Switch 2">Nintendo Switch 2</option>
+                        <option value="PC">PC</option>
+                        <option value="PlayStation">PlayStation</option>
+                        <option value="PlayStation 2">PlayStation 2</option>
+                        <option value="PlayStation 3">PlayStation 3</option>
+                        <option value="PlayStation 4">PlayStation 4</option>
+                        <option value="PlayStation 5">PlayStation 5</option>
+                        <option value="PlayStation Vita">PlayStation Vita</option>
+                        <option value="PSP">PSP</option>
+                        <option value="Saturn">Saturn</option>
+                        <option value="Sega 32X">Sega 32X</option>
+                        <option value="Sega CD">Sega CD</option>
+                        <option value="Sega Master System">Sega Master System</option>
+                        <option value="Super Nintendo">Super Nintendo</option>
+                        <option value="Virtual Boy">Virtual Boy</option>
+                        <option value="Wii">Wii</option>
+                        <option value="Wii U">Wii U</option>
+                        <option value="Xbox">Xbox</option>
+                        <option value="Xbox 360">Xbox 360</option>
+                        <option value="Xbox One">Xbox One</option>
+                        <option value="Xbox Series X">Xbox Series X</option>
+                    </select>
 
-            <label for="completeInBox">Complete in Box?</label>
-            <input type="checkbox" name="completeInBox" id="completeInBox" />
+                    <label for="completeInBox">Complete in Box?</label>
+                    <input type="checkbox" name="completeInBox" id="completeInBox" />
 
-            <label for="imageUrl">Box Art URL:</label>
-            <input type="text" name="imageUrl" id="imageUrl" />
+                    <label for="imageUrl">Box Art URL:</label>
+                    <input type="text" name="imageUrl" id="imageUrl" />
 
-            <label for="notes">Notes</label>
-            <textarea name="notes" id="notes"></textarea>
-            <button type="submit">Add Game</button>
-        </form>
+                    <label for="notes">Notes</label>
+                    <textarea name="notes" id="notes"></textarea>
+            </div>
+            <div class="button-div">
+                <button class="form-button" type="submit">Add Game</button>
+            </div>
+            </form>
+        </div>
 </body>
 
 </html>
