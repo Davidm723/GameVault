@@ -7,31 +7,48 @@
     <title>
         <%= game.title %>
     </title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/show.css" />
 </head>
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
-        <h1>
-            <%= game.title %>
-        </h1>
-        <img src="<%= game.imageUrl %>" alt="<%= game.name %>" height="100px" width="auto" />
-        <h3>
-            <%= game.system %>
-        </h3>
-        <% if (game.completeInBox===true) { %>
-            <p>Complete in Box</p>
-            <% } else { %>
-                <p>Not Complete in Box</p>
-                <% } %>
-                    <% if (game.notes) { %>
-                        <p>Notes: <%= game.notes %>
-                        </p>
-                        <% } %>
-                            <a href="/users/<%= user._id %>/games/<%= game._id %>/edit">Edit Game</a>
-                            <form action="/users/<%= user._id %>/games/<%= game._id %>?_method=DELETE" method="post">
-                                <button type="submit">Delete Game</button>
-                            </form>
+        <div class="show-body">
+            <div class="show-header">
+                <h1>
+                    <%= game.title %>
+                </h1>
+            </div>
+            <div class="show-page">
+                <div class="img-container">
+                    <img src="<%= game.imageUrl %>" alt="<%= game.name %>" height="300px" width="auto" />
+                </div>
+                <div class="show-sidebar">
+                    <h3>
+                        <%= game.system %>
+                    </h3>
+                    <% if (game.completeInBox===true) { %>
+                        <p>Complete in Box</p>
+                        <% } else { %>
+                            <p>Not Complete in Box</p>
+                            <% } %>
+                                <div class="show-notes">
+                                    <% if (game.notes) { %>
+                                        <p>Notes: <%= game.notes %>
+                                        </p>
+                                        <% } %>
+                                </div>
+
+                                <div class="show-actions">
+                                    <a href="/users/<%= user._id %>/games/<%= game._id %>/edit">Edit Game</a>
+                                    <form action="/users/<%= user._id %>/games/<%= game._id %>?_method=DELETE"
+                                        method="post">
+                                        <button type="submit">Delete Game</button>
+                                </div>
+                                </form>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>

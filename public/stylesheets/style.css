@@ -78,36 +78,8 @@ body {
   background-color: #80d010;
 }
 
-.navbar {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  margin: -10px;
-  padding: 10px;
-}
-
 a{
   text-decoration: none;
-}
-
-#nav-header {
-  color: #fcfcfc;
-  size: 1em !important;
-  margin: 0;
-}
-
-.authlink {
-  text-decoration: none;
-  margin: 0 15px;
-  color: #5c94fc;
-  font-weight: bold;
-}
-
-.authlink:hover {
-  color: #fcfcfc;
 }
 
 .signin-container,
@@ -198,7 +170,7 @@ button:hover {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  background-color: rgba(252, 252, 252, 0.5);
+  background-color: rgba(252, 252, 252, 0.3);
   padding-top: 40px;
   padding-bottom: 40px;
   border-radius: 10px;
@@ -211,9 +183,13 @@ button:hover {
 
 li > a {
   color: #fcfcfc;
-  max-width: 285px;
+  max-width: 220px;
   text-align: center;
   margin: 15px;
+}
+
+li > a:hover{
+  color: gold;
 }
 
 img {
