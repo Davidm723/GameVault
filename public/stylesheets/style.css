@@ -136,7 +136,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  min-height: 76vh;
 }
 
 .all-games-header {
@@ -170,6 +170,7 @@ button:hover {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
   background-color: rgba(252, 252, 252, 0.3);
   padding-top: 40px;
   padding-bottom: 40px;
@@ -192,6 +193,11 @@ li > a {
 
 li > a:hover {
   color: gold;
+}
+
+.box-art {
+  max-height: 150px;
+  max-width: 225px;
 }
 
 img {

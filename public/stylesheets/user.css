@@ -21,6 +21,7 @@ ul {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   background-color: rgba(252, 252, 252, 0.3);
   padding-top: 40px;
   padding-bottom: 40px;

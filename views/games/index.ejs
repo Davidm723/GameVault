@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <div class="all-games-body">
-        <%- include('../partials/_navbar.ejs') %>
+    <%- include('../partials/_navbar.ejs') %>
+        <div class="all-games-body">
             <div class="all-games-header">
                 <h1>
                     <%= user.username %>'s Games
@@ -20,21 +20,27 @@
             </div>
             <a class="add-game-link" href="/users/<%= user._id %>/games/new">Add New Game</a>
             <ul class="games-ul">
-                <% games.forEach((game)=> { %>
-                    <li class="games-li">
-                        <a href="/users/<%= user._id %>/games/<%= game._id %>">
-                            <div class="games-img">
-                                <img src="<%= game.imageUrl %>" alt="<%= game.title %>" height="150px" width="auto">
-                            </div>
-                            <div class="game-name">
-                                (<%= game.system %>) <%= game.title %>
-                            </div>
-                        </a>
-                    </li>
-                    <% }) %>
+                <% if (games.length> 0) { %>
+                    <% games.forEach((game)=> { %>
+                        <li class="games-li">
+                            <a href="/users/<%= user._id %>/games/<%= game._id %>">
+                                <div class="games-img">
+                                    <img class="box-art" src="<%= game.imageUrl %>" alt="<%= game.title %>" >
+                                </div>
+                                <div class="game-name">
+                                    (<%= game.system %>) <%= game.title %>
+                                </div>
+                            </a>
+                        </li>
+                        <% }) %>
+                            <% } else { %>
+                                You have no games
+                                <% } %>
             </ul>
-    </div>
-            <%- include('../partials/_footer.ejs') %>
+            <div>
+                <%- include('../partials/_footer.ejs') %>
+            </div>
+        </div>
 </body>
 
 </html>

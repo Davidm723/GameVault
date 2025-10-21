@@ -26,7 +26,7 @@
                         <% user.games.forEach(game=> { %>
                             <li class="games-li">
                                 <div class="games-img">
-                                    <img src="<%= game.imageUrl %>" alt="game.title" height="150px" width="auto" />
+                                    <img class="box-art" src="<%= game.imageUrl %>" alt="game.title" height="150px" width="auto" />
                                 </div>
                                 <div class="games-name">
                                     (<%= game.system %>) <%= game.title %>
@@ -35,8 +35,10 @@
                             <% }) %>
                                 <% } %>
             </ul>
+            <div>
+                <%- include('../partials/_footer.ejs') %>
+            </div>
     </div>
-    <%- include('../partials/_footer.ejs') %>
 </body>
 
 </html>
