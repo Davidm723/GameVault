@@ -63,7 +63,7 @@ button:hover {
   width: 9em;
   text-align: center;
   margin: 5px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .show-actions > a:hover {
@@ -83,13 +83,17 @@ p {
 }
 
 .show-notes {
-  background-color: #5c94fc;;
+  background-color: #5c94fc;
   width: 85%;
   border-radius: 10px;
 }
 
 h3 {
   margin: 0 10px;
+  color: #1c2e5b;
+}
+
+.cib {
   color: #1c2e5b;
 }
 
