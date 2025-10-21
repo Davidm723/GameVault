@@ -29,3 +29,9 @@ a{
 .authlink:hover {
   color: #fcfcfc;
 }
+
+footer {
+  width: 100vw;
+  position: relative;
+  margin-left: -10px;
+}
