@@ -6,9 +6,9 @@ const User = require("../models/user");
 router.get("/", async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    if(!currentUser) {
+    if (!currentUser) {
       req.session.destroy();
-      res.redirect('/auth/sign-in')
+      return res.redirect("/auth/sign-in");
     }
     res.render("games/index.ejs", {
       games: currentUser.games,
@@ -45,55 +45,55 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get('/:gameId', async (req, res) => {
-    try {
-        const currentUser = await User.findById(req.session.user._id);
-        const game = currentUser.games.id(req.params.gameId);
-        res.render('games/show.ejs', {
-            game: game,
-        });
-    } catch (error) {
-        console.log(error);
-        res.redirect('/');
-    }
-});
-
-router.delete('/:gameId', async (req, res) => {
-    try {
-        const currentUser = await User.findById(req.session.user._id);
-        currentUser.games.id(req.params.gameId).deleteOne();
-        await currentUser.save();
-        res.redirect(`/users/${currentUser._id}/games`);
-    } catch (error) {
-        console.log(error);
-        res.redirect('/');
-    }
-});
-
-router.get('/:gameId/edit', async (req, res) => {
-    try {
-        const currentUser = await User.findById(req.session.user._id);
-        const game = currentUser.games.id(req.params.gameId);
-        res.render('games/edit.ejs', {
-            game: game,
-        });
-    } catch (error) {
-        console.log(error);
-        res.redirect('/');
-    }
-});
-
-router.put('/:gameId', async (req, res) => {
+router.get("/:gameId", async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     const game = currentUser.games.id(req.params.gameId);
-    req.body.completeInBox = req.body.completeInBox === 'on';
+    res.render("games/show.ejs", {
+      game: game,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
+router.delete("/:gameId", async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    currentUser.games.id(req.params.gameId).deleteOne();
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/games`);
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
+router.get("/:gameId/edit", async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const game = currentUser.games.id(req.params.gameId);
+    res.render("games/edit.ejs", {
+      game: game,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
+router.put("/:gameId", async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const game = currentUser.games.id(req.params.gameId);
+    req.body.completeInBox = req.body.completeInBox === "on";
     game.set(req.body);
     await currentUser.save();
     res.redirect(`/users/${currentUser._id}/games/${req.params.gameId}`);
   } catch (error) {
     console.log(error);
-    res.redirect('/');
+    res.redirect("/");
   }
 });
 
