@@ -28,7 +28,7 @@ ul {
   border-radius: 10px;
 }
 
-.games-li {
+.user-li {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,4 +36,10 @@ ul {
   max-width: 220px;
   text-align: center;
   margin: 15px;
+}
+
+
+.box-art {
+  max-height: 150px;
+  max-width: 225px;
 }

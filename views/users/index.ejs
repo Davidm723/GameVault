@@ -22,7 +22,7 @@
                             <div class="user-img">
                                 <% if (user.games.length> 0) {
                                     const lastGame = user.games[user.games.length - 1]; %>
-                                    <img src="<%= lastGame.imageUrl %>" alt="<%= lastGame.title %>" height="150px"
+                                    <img class="box-art" src="<%= lastGame.imageUrl %>" alt="<%= lastGame.title %>" height="150px"
                                         width="auto" />
                                     <% } else { %>
                                         <img src="https://gamefaqs.gamespot.com/a/platform/thumb/arcade.jpg"
