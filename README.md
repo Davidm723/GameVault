@@ -4,7 +4,7 @@
 
 This project was inspired by my own personal game collection. I wanted a place where you can show off your own collection while also being able to explore other user's collections.
 
-[GameVault]()
+[GameVault](https://game-vault-app-71b9a57b0ce2.herokuapp.com/users)
 
 ## Technologies Used
 
@@ -19,6 +19,7 @@ This project was inspired by my own personal game collection. I wanted a place w
 * Session
 * MongoDB
 * Mongo Store
+* BCrypt
 
 ## Next Steps
 
